@@ -1,0 +1,34 @@
+.petCardMain {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid #babbbb;
+    padding: 20px 10px;
+    border-radius: 4px;
+    transition: all ease-out 100ms;
+    box-shadow: -1px 6px 20px -7px rgba(163, 163, 163, 0.75);
+    -webkit-box-shadow: -1px 6px 20px -7px rgba(163, 163, 163, 0.75);
+    -moz-box-shadow: -1px 6px 20px -7px rgba(163, 163, 163, 0.75);
+    margin: 12px;
+    min-width: 150px;
+}
+
+.petCardMain:hover {
+    transform: scale(1.125);
+    box-shadow: -1px 6px 47px 0px rgba(199, 199, 199, 0.75);
+    -webkit-box-shadow: -1px 6px 47px 0px rgba(199, 199, 199, 0.75);
+    -moz-box-shadow: -1px 6px 47px 0px rgba(199, 199, 199, 0.75);
+}
+
+.PetCardSpecies {
+    font-size: 48px;
+    margin-right: 14px;
+}
+.PetCardName {
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.PetCardAge {
+    font-size: 12px;
+}
