@@ -20,6 +20,22 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/customer": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["GetCustomer"];
+        put?: never;
+        post: operations["AddCustomer"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -44,6 +60,20 @@ export interface components {
             /** Format: double */
             age: number;
             species: string;
+        };
+        ICustomer: {
+            firstName: string;
+            lastName: string;
+            customerId: string;
+        };
+        /** @description From T, pick a set of properties whose keys are in the union K */
+        "Pick_ICustomer.Exclude_keyofICustomer.customerId__": {
+            firstName: string;
+            lastName: string;
+        };
+        AddCustomerDTO: {
+            firstName: string;
+            lastName: string;
         };
     };
     responses: never;
@@ -105,6 +135,79 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["IPet"];
+                };
+            };
+            /** @description Created */
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        message: string;
+                        status: string;
+                    };
+                };
+            };
+        };
+    };
+    GetCustomer: {
+        parameters: {
+            query: {
+                firstName: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ICustomer"];
+                };
+            };
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        message: string;
+                        status: string;
+                    };
+                };
+            };
+        };
+    };
+    AddCustomer: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["AddCustomerDTO"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ICustomer"];
                 };
             };
             /** @description Created */
