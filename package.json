@@ -5,14 +5,20 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "tsc -b && vite build",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "fetch:swagger": "npx tsx src/utils/fetchSwagger.ts",
+        "build": "npm run fetch:swagger && npm run check:swagger && vite build"
     },
     "dependencies": {
+        "dotenv": "^16.4.5",
+        "googleapis": "^140.0.1",
+        "jsonwebtoken": "^9.0.0",
+        "node-fetch": "^2.7.0",
         "openapi-fetch": "^0.10.2",
         "react": "^18.3.1",
-        "react-dom": "^18.3.1"
+        "react-dom": "^18.3.1",
+        "tsx": "^4.16.0"
     },
     "devDependencies": {
         "@types/react": "^18.3.3",
@@ -24,7 +30,9 @@
         "eslint-plugin-react-hooks": "^4.6.2",
         "eslint-plugin-react-refresh": "^0.4.7",
         "prettier": "^3.3.2",
-        "typescript": "^5.2.2",
+        "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.5.2",
         "vite": "^5.3.2"
     }
 }
