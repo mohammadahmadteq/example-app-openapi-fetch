@@ -1,32 +1,4 @@
-/*
-import fs from 'fs';
-import path from 'path';
 
-function checkSwaggerChanges() {
-  const oldSwaggerPath = path.resolve(__dirname, '../output/oldSwagger.json');
-  const newSwaggerPath = path.resolve(__dirname, '../output/swagger.json');
-
-  if (!fs.existsSync(oldSwaggerPath)) {
-    fs.copyFileSync(newSwaggerPath, oldSwaggerPath);
-    console.log('No previous swagger.json found. Saved current swagger.json as oldSwagger.json.');
-    return false;
-  }
-
-  const oldSwagger = fs.readFileSync(oldSwaggerPath, 'utf-8');
-  const newSwagger = fs.readFileSync(newSwaggerPath, 'utf-8');
-
-  if (oldSwagger !== newSwagger) {
-    console.error('Swagger files have changed. Please update the frontend accordingly.');
-    fs.copyFileSync(newSwaggerPath, oldSwaggerPath);
-    return true;
-  }
-
-  console.log('No changes detected in swagger.json.');
-  return false;
-}
-
-checkSwaggerChanges();
-*/
 
 import fs from 'fs';
 import path from 'path';
