@@ -7,8 +7,9 @@
         "dev": "vite",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
+        "build": "npm run fetch:swagger && npm run check:swagger && vite build",
         "fetch:swagger": "npx tsx src/utils/fetchSwagger.ts",
-        "build": "npm run fetch:swagger && npm run check:swagger && vite build"
+        "check:swagger": "npx tsx src/utils/checkSwaggerChanges.ts"
     },
     "dependencies": {
         "dotenv": "^16.4.5",
